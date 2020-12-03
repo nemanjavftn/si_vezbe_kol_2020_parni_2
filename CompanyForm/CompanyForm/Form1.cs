@@ -20,20 +20,21 @@ namespace CompanyForm
             this.business = new Business();
             InitializeComponent();
         }
+        private void FillList()
+        {
+            
+            List<Employee> employees = this.business.GetEmployees();
+            foreach (Employee em in employees)
+            {
+                listBoxEmployees.Items.Add(em.Id + ". " + em.Name + ", " + em.Surname + ", " + em.Salary);
+            }
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             FillList();
         }
-        private void  FillList()
-        {
-            listBoxEmployees.Items.Clear();
-            List<Employee> employees = this.business.GetEmployees();
-            foreach (Employee e in employees)
-            {
-                listBoxEmployees.Items.Add(e.Id + ". " + e.Name + ", " + e.Surname + ", " + e.Salary);
-            }
-        }
+       
 
         private void buttonInsert_Click(object sender, EventArgs e)
         {

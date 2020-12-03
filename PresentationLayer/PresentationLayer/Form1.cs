@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using DataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +23,23 @@ namespace PresentationLayer
 
         private void Form1_Load(object sender, EventArgs e)
         {
+          
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void refreshData()
+        {
+            List<Employee> employees = this.employeeBusiness.GetAllEmployees();
+            foreach(Employee s in employees)
+            {
+
+            }
         }
     }
 }
+
+// nisam stigao da povezem  dugme i list box ali kad sam ovde stigao sve ostalo je prelako...

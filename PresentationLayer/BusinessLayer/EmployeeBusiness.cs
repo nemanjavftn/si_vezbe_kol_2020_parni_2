@@ -18,9 +18,13 @@ namespace BusinessLayer
         {
             this.employeeRepositoryl = new EmployeeRepository(); 
         }
-        public List<Employee> GetAllEmployees(decimal a, decimal b)
+        public List<Employee> GetEmployees(decimal a, decimal b)
         {
             return this.employeeRepositoryl.GettAllEmployees().Where(n => n.Salary > a && n.Salary < b).ToList();
+        }
+        public List<Employee> GetAllEmployees()
+        {
+            return this.employeeRepositoryl.GettAllEmployees();
         }
         public bool insertEmpoyee(Employee s)
         {

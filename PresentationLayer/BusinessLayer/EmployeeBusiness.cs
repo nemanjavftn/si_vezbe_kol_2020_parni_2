@@ -31,9 +31,9 @@ namespace BusinessLayer
             return false;
         }
 
-        public List<Employee> Rang(decimal Salaryfrom)
+        public List<Employee> Rang(decimal Salaryfrom, decimal Salaryto)
         {
-            return this.employeRepository.GetAllEmployees().Where(e => e.Salary > Salaryfrom).ToList();
+            return this.employeRepository.GetAllEmployees().Where(e => e.Salary > Salaryfrom && e.Salary < Salaryto).ToList();
         }
         
     }

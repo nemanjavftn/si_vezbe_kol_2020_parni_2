@@ -18,10 +18,9 @@ namespace BusinessLayer
             this.employeeRepository = new EmployeeRepository();
         }
 
-        public List<Employee> GetEmployeess()
+        public List<Employee> GetEmployeess(decimal m, decimal r)
         {
-            return this.employeeRepository.GetEmployess();
-
+            return this.employeeRepository.GetEmployess().Where(s => s.Salary > m && s.Salary < r).ToList();
         }
         public bool InsertE(Employee e)
         {
@@ -31,10 +30,7 @@ namespace BusinessLayer
             }
             return false;
         }
-        public List<Employee> Salary(decimal m, decimal r)
-        {
-            return this.employeeRepository.GetEmployess().Where(s => s.Salary > m && s.Salary < r).ToList(); 
-        }
+      
     }
 
 }

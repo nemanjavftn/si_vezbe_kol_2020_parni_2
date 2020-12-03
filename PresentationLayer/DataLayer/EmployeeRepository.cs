@@ -10,7 +10,7 @@ namespace DataLayer
 {
     public class EmployeeRepository
     {
-        public List<Employee> getemployees()
+        public List<Employee> GetEmployees()
         {
             List<Employee> employees = new List<Employee>();
             using (SqlConnection connection = new SqlConnection(Constants.connectionString))
